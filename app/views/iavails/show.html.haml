@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b
+  /Drug:
+  = Iavail.human_attribute_name(:drug) + ":"
+  = @iavail.drug.name
+%p
+  %b
+  /Pharmacy:
+  = Iavail.human_attribute_name(:pharmacy) + ":"
+  = @iavail.pharmacy.number
+%p
+  %b
+  /Quantity:
+  = Iavail.human_attribute_name(:quantity) + ":"
+  = @iavail.quantity
+
+= link_to t('helpers.edit'), edit_iavail_path(@iavail)
+\|
+= link_to t('helpers.back'), iavails_path

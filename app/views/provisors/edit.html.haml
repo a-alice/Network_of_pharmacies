@@ -1,0 +1,9 @@
+%h1 
+  = t('helpers.editing')
+  = Provisor.model_name.human(count: 2)
+
+= render 'form'
+
+= link_to t('helpers.show'), @provisor
+\|
+= link_to t('helpers.back'), provisors_path

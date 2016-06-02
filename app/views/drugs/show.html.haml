@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b 
+  = Drug.human_attribute_name(:name) + ":"
+  = @drug.name
+%p
+  %b
+  = Drug.human_attribute_name(:volume) + ":"
+  = @drug.volume
+%p
+  %b
+  = Drug.human_attribute_name(:dosage) + ":"
+  = @drug.dosage
+%p
+  %b
+  = Drug.human_attribute_name(:maker) + ":"
+  = @drug.maker
+%p
+  %b
+  = Drug.human_attribute_name(:recipe) + ":"
+  = russify_boolean(@drug.recipe)
+%p
+  %b
+  = Drug.human_attribute_name(:categories) + ":"
+  = show_category(@drug.category_ids)
+
+= link_to t('helpers.edit'), edit_drug_path(@drug)
+\|
+= link_to t('helpers.back'), drugs_path

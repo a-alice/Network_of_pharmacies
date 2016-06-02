@@ -1,0 +1,37 @@
+%h1
+  =t('helpers.listing')  
+  \
+  =Isale.model_name.human(count: 0)
+
+%table
+  %thead
+    %tr
+      /%th Pharmacy
+      /%th Provisor
+      /%th Drug
+      /%th Date sale
+      /%th Quantity
+      %th= Isale.human_attribute_name(:pharmacy)
+      %th= Isale.human_attribute_name(:provisor)
+      %th= Isale.human_attribute_name(:drug)
+      %th= Isale.human_attribute_name(:date_sale)
+      %th= Isale.human_attribute_name(:quantity)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @isales.each do |isale|
+      %tr
+        %td= isale.pharmacy.number
+        %td= isale.provisor.surname
+        %td= isale.drug.name
+        %td= isale.date_sale
+        %td= isale.quantity
+        %td= link_to t('helpers.show'), isale
+        %td= link_to t('helpers.edit'), edit_isale_path(isale)
+        %td= link_to t('helpers.destroy'), isale, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new') + ' ' + Isale.model_name.human(count: 2), new_isale_path

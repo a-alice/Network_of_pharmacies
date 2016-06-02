@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  volume: 1
+  dosage: 1
+  maker: MyString
+  recipe: 1
+  new_category: 1
+  dest_category: 1
+
+two:
+  name: MyText
+  volume: 1
+  dosage: 1
+  maker: MyString
+  recipe: 1
+  new_category: 1
+  dest_category: 1

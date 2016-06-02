@@ -1,0 +1,25 @@
+= form_for @isale do |f|
+  - if @isale.errors.any?
+    #error_explanation
+      %h2= "Ошибок на странице: #{@isale.errors.count}"
+      %ul
+        - @isale.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :pharmacy
+    = f.select(:pharmacy_id, pharmacy_options(f.object.pharmacy_id))
+  .field
+    = f.label :provisor
+    = f.select(:provisor_id, provisor_options(f.object.provisor_id))
+  .field
+    = f.label :drug
+    = f.select(:drug_id, drug_options(f.object.drug_id))
+  .field
+    = f.label :date_sale
+    = f.date_select :date_sale
+  .field
+    = f.label :quantity
+    = f.number_field :quantity
+  .actions
+    = f.submit

@@ -1,0 +1,19 @@
+= form_for @category do |f|
+  - if @category.errors.any?
+    #error_explanation
+      %h2= "Ошибок на странице: #{@category.errors.count}"
+      %ul
+        - @category.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :new_drug
+    = f.select(:new_drug, new_drug_options(f.object.new_drug))
+  .field
+    = f.label :dest_drug
+    = f.select(:dest_drug, dest_drug_options(f.object.dest_drug))
+  .actions
+    = f.submit

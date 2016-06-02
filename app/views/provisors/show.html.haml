@@ -1,0 +1,41 @@
+%p#notice= notice
+
+%p
+  %b
+  / Name:
+  = Provisor.human_attribute_name(:name) + ":"
+  = @provisor.name
+%p
+  %b
+  / Surname:
+  = Provisor.human_attribute_name(:surname) + ":"
+  = @provisor.surname
+%p
+  %b
+  / Fathername:
+  = Provisor.human_attribute_name(:fathername) + ":"
+  = @provisor.fathername
+%p
+  %b
+  / Birthday:
+  = Provisor.human_attribute_name(:birthday) + ":"
+  = @provisor.birthday
+%p
+  %b
+  / Inn:
+  = Provisor.human_attribute_name(:inn) + ":"
+  = @provisor.inn
+%p
+  %b
+  / Passport:
+  = Provisor.human_attribute_name(:passport) + ":"
+  = @provisor.passport
+%p
+  %b
+  / Pharmacy:
+  = Provisor.human_attribute_name(:pharmacy) + ":"
+  = @provisor.pharmacy.number
+
+= link_to t('helpers.edit'), edit_provisor_path(@provisor)
+\|
+= link_to t('helpers.back'), provisors_path

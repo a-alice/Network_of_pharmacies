@@ -1,0 +1,31 @@
+= form_for @drug do |f|
+  - if @drug.errors.any?
+    #error_explanation
+      %h2= "Ошибок на странице: #{@drug.errors.count}"
+      %ul
+        - @drug.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :volume
+    = f.number_field :volume
+  .field
+    = f.label :dosage
+    = f.number_field :dosage
+  .field
+    = f.label :maker
+    = f.text_field :maker
+  .field
+    = f.label :recipe
+    = f.check_box :recipe
+  .field
+    = f.label :new_category
+    = f.select(:new_category, new_category_options(f.object.new_category))
+  .field
+    = f.label :dest_category
+    = f.select(:dest_category, dest_category_options(f.object.dest_category))
+  .actions
+    = f.submit

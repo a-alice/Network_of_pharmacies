@@ -1,0 +1,97 @@
+ru: 
+  helpers:
+    sure: Вы уверены?
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+    back: Назад
+    listing: Список
+    show: Показать
+    edit: Изменить
+    editing: Редактирование
+    destroy: Удалить
+    search: Искать
+    new: Создание
+    success-upd: Объект успешно обновлен
+    success-crt: Объект успешно создан
+    success-dst: Объект успешно удалён
+
+  activerecord:
+    models:
+      category:
+        one: категория
+        few: категории
+        many: категорий
+        other: категорий
+      drug:
+        one: лекарство
+        few: лекарства
+        many: лекарств
+        other: лекарств
+      iavail:
+        one: запись о наличии
+        few: записи о наличии
+        many: записей о наличии
+        other: записей о наличии
+      isale:
+        one: запись о продаже
+        few: записи о продаже
+        many: записей о продаже
+        other: записей о продаже
+      pharmacy:
+        one: аптека
+        few: аптеки
+        many: аптек
+        other: аптек
+      provisor:
+        one: провизор
+        few: провизора
+        many: провизоров
+        other: провизоров
+      statistic:
+        one: Статистика о продажах
+
+    attributes:
+      category:
+        name: Название
+        drugs: Лекарства
+        new_drug: Добавить лекарство
+        dest_drug: Удалить лекарство
+      drug:
+        name: Название
+        volume: Объем
+        maker: Производитель
+        dosage: Дозировка
+        recipe: Нужен рецепт
+        categories: Категории
+        new_category: Добавить категорию
+        dest_category: Удалить категорию
+      iavail:
+        drug: Лекарство
+        pharmacy: Аптека
+        quantity: Количество
+      isale:
+        pharmacy: Аптека
+        provisor: Провизор
+        drug: Лекарство
+        date_sale: Дата продажи
+        quantity: Количество
+      pharmacy:
+        address: Адрес
+        number: Номер
+        subway: Ближайшее метро
+      provisor:
+        name: Имя
+        surname: Фамилия
+        fathername: Отчество
+        birthday: Дата рождения
+        inn: ИНН
+        passport: Паспортные данные
+        pharmacy: Номер аптеки
+      statistic:
+        number: Номер аптеки
+        quantity: Количество
+
+
+      

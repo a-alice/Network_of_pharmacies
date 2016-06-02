@@ -1,0 +1,35 @@
+%p#notice= notice
+
+%p
+  %b
+  / Pharmacy:
+  = Isale.human_attribute_name(:pharmacy) + ":"
+  = @isale.pharmacy.number
+%p
+  %b
+  / Provisor:
+  = Isale.human_attribute_name(:provisor) + ":"
+  = @isale.provisor.surname
+  = @isale.provisor.name
+  (
+  = @isale.provisor.passport
+  )
+%p
+  %b
+  / Drug:
+  = Isale.human_attribute_name(:drug) + ":"
+  = @isale.drug.name
+%p
+  %b
+  / Date sale:
+  = Isale.human_attribute_name(:date_sale) + ":"
+  = @isale.date_sale
+%p
+  %b
+  / Quantity:
+  = Isale.human_attribute_name(:quantity) + ":"
+  = @isale.quantity
+
+= link_to t('helpers.edit'), edit_isale_path(@isale)
+\|
+= link_to t('helpers.back'), isales_path

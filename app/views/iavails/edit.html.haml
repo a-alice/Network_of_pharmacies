@@ -1,0 +1,9 @@
+%h1 
+  = t('helpers.editing')
+  = Iavail.model_name.human(count: 2)
+
+= render 'form'
+
+= link_to t('helpers.show'), @iavail
+\|
+= link_to t('helpers.back'), iavails_path

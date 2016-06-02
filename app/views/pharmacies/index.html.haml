@@ -1,0 +1,31 @@
+%h1
+  =t('helpers.listing')  
+  \
+  =Pharmacy.model_name.human(count: 0)
+
+%table
+  %thead
+    %tr
+      /%th Address
+      /%th Number
+      /%th Subway
+      %th= Pharmacy.human_attribute_name(:address)
+      %th= Pharmacy.human_attribute_name(:number)
+      %th= Pharmacy.human_attribute_name(:subway)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @pharmacies.each do |pharmacy|
+      %tr
+        %td= pharmacy.address
+        %td= pharmacy.number
+        %td= pharmacy.subway
+        %td= link_to t('helpers.show'), pharmacy
+        %td= link_to t('helpers.edit'), edit_pharmacy_path(pharmacy)
+        %td= link_to t('helpers.destroy'), pharmacy, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new') + ' ' + Pharmacy.model_name.human(count: 2), new_pharmacy_path

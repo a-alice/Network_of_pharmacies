@@ -1,0 +1,18 @@
+%h1
+  =Statistic.model_name.human(count: 1)
+
+%table
+  %thead
+    %tr
+      %th= Statistic.human_attribute_name(:number)
+      %th= Statistic.human_attribute_name(:quantity)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @statistics.each do |statistic|
+      %tr
+        %td= show_number(statistic.number)
+        %td= statistic.quantity
+        %td= link_to t('helpers.show'), statistic

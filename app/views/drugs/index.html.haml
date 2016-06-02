@@ -1,0 +1,34 @@
+%h1
+  =t('helpers.listing')  
+  \
+  =Drug.model_name.human(count: 0)
+  
+%table
+  %thead
+    %tr
+      %th= Drug.human_attribute_name(:name)
+      %th= Drug.human_attribute_name(:volume)
+      %th= Drug.human_attribute_name(:dosage)
+      %th= Drug.human_attribute_name(:maker)
+      %th= Drug.human_attribute_name(:recipe)
+      %th= Drug.human_attribute_name(:categories)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @drugs.each do |drug|
+      %tr
+        %td= drug.name
+        %td= drug.volume
+        %td= drug.dosage
+        %td= drug.maker
+        %td= russify_boolean(drug.recipe)
+        %td= show_category(drug.category_ids)
+        %td= link_to t('helpers.show'), drug
+        %td= link_to t('helpers.edit'), edit_drug_path(drug)
+        %td= link_to t('helpers.destroy'), drug, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new') + ' ' + Drug.model_name.human(count: 2), new_drug_path

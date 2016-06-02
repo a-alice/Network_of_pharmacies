@@ -1,0 +1,43 @@
+%h1
+  =t('helpers.listing')  
+  \
+  =Provisor.model_name.human(count: 0)
+
+%table
+  %thead
+    %tr
+      /%th Name
+      /%th Surname
+      /%th Fathername
+      /%th Birthday
+      /%th Inn
+      /%th Passport
+      /%th Pharmacy
+      %th= Provisor.human_attribute_name(:name)
+      %th= Provisor.human_attribute_name(:surname)
+      %th= Provisor.human_attribute_name(:fathername)
+      %th= Provisor.human_attribute_name(:birthday)
+      %th= Provisor.human_attribute_name(:inn)
+      %th= Provisor.human_attribute_name(:passport)
+      %th= Provisor.human_attribute_name(:pharmacy)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @provisors.each do |provisor|
+      %tr
+        %td= provisor.name
+        %td= provisor.surname
+        %td= provisor.fathername
+        %td= provisor.birthday
+        %td= provisor.inn
+        %td= provisor.passport
+        %td= provisor.pharmacy.number
+        %td= link_to t('helpers.show'), provisor
+        %td= link_to t('helpers.edit'), edit_provisor_path(provisor)
+        %td= link_to t('helpers.destroy'), provisor, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new') + ' ' + Provisor.model_name.human(count: 2), new_provisor_path

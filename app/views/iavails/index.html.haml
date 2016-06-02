@@ -1,0 +1,31 @@
+%h1
+  =t('helpers.listing')  
+  \
+  =Iavail.model_name.human(count: 0)
+
+%table
+  %thead
+    %tr
+      /%th Drug
+      /%th Pharmacy
+      /%th Quantity
+      %th= Iavail.human_attribute_name(:drug)
+      %th= Iavail.human_attribute_name(:pharmacy)
+      %th= Iavail.human_attribute_name(:quantity)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @iavails.each do |iavail|
+      %tr
+        %td= iavail.drug.name
+        %td= iavail.pharmacy.number
+        %td= iavail.quantity
+        %td= link_to t('helpers.show'), iavail
+        %td= link_to t('helpers.edit'), edit_iavail_path(iavail)
+        %td= link_to t('helpers.destroy'), iavail, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new') + ' ' + Iavail.model_name.human(count: 2), new_iavail_path

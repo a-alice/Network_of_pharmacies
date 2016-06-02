@@ -1,0 +1,19 @@
+= form_for @iavail do |f|
+  - if @iavail.errors.any?
+    #error_explanation
+      %h2= "Ошибок на странице: #{@iavail.errors.count}"
+      %ul
+        - @iavail.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :drug
+    = f.select(:drug_id, drug_options(f.object.drug_id))
+  .field
+    = f.label :pharmacy
+    = f.select(:pharmacy_id, pharmacy_options(f.object.pharmacy_id))
+  .field
+    = f.label :quantity
+    = f.number_field :quantity
+  .actions
+    = f.submit

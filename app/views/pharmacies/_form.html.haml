@@ -1,0 +1,19 @@
+= form_for @pharmacy do |f|
+  - if @pharmacy.errors.any?
+    #error_explanation
+      %h2= "Ошибок на странице: #{@pharmacy.errors.count}"
+      %ul
+        - @pharmacy.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :number
+    = f.number_field :number
+  .field
+    = f.label :subway
+    = f.text_field :subway
+  .actions
+    = f.submit

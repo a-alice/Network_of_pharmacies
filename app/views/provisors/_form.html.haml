@@ -1,0 +1,31 @@
+= form_for @provisor do |f|
+  - if @provisor.errors.any?
+    #error_explanation
+      %h2= "Ошибок на странице: #{@provisor.errors.count}"
+      %ul
+        - @provisor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :surname
+    = f.text_field :surname
+  .field
+    = f.label :fathername
+    = f.text_field :fathername
+  .field
+    = f.label :birthday
+    = f.date_select :birthday
+  .field
+    = f.label :inn
+    = f.number_field :inn
+  .field
+    = f.label :passport
+    = f.number_field :passport
+  .field
+    = f.label :pharmacy
+    = f.select(:pharmacy_id, pharmacy_options(f.object.pharmacy_id))
+  .actions
+    = f.submit

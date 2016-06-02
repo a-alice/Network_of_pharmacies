@@ -1,0 +1,7 @@
+%h1 
+  = t('helpers.new')
+  = Pharmacy.model_name.human(count: 2)
+
+= render 'form'
+
+= link_to t('helpers.back'), pharmacies_path

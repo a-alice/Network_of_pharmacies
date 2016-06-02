@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pharmacy_id: 
+  provisor_id: 
+  drug_id: 
+  date_sale: 2016-06-01
+  quantity: 1
+
+two:
+  pharmacy_id: 
+  provisor_id: 
+  drug_id: 
+  date_sale: 2016-06-01
+  quantity: 1
