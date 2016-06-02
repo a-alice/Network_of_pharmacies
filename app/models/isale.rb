@@ -16,7 +16,7 @@ class Isale < ActiveRecord::Base
 								p.id
 							 end}
 		if a.include?(provisor_id) == false
-			errors[:provisor_id] << 'работает в другой аптеке'
+			errors[:base] << 'Провизор работает в другой аптеке'
 		end
 	end
 

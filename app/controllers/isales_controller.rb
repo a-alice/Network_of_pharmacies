@@ -50,12 +50,9 @@ class IsalesController < ApplicationController
     respond_to do |format|
       if @isale.update(isale_params)
         stat = Statistic.find_by(number: @isale.pharmacy_id)
-        if @isale.quantity > old_quantity
-          stat.update_attributes(quantity: stat.quantity - old_quantity + @isale.quantity)
-        else
-          stat.update_attributes(quantity: stat.quantity - old_quantity - @isale.quantity)
-        end
 
+        stat.update_attributes(quantity: stat.quantity - old_quantity + @isale.quantity)
+        
         format.html { redirect_to @isale, notice: t('helpers.success-upd') }
         format.json { render :show, status: :ok, location: @isale }
       else
