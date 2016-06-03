@@ -20,4 +20,8 @@ class Isale < ActiveRecord::Base
 		end
 	end
 
+	def Isale.stat()
+		Isale.group(:pharmacy_id).sum(:quantity).to_a
+	end
+
 end

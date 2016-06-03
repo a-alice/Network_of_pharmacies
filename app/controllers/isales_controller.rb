@@ -1,11 +1,19 @@
 class IsalesController < ApplicationController
   before_action :set_isale, only: [:show, :edit, :update, :destroy]
 
+
+  def stats
+    @info = Isale.stat()
+  end
+
+
   # GET /isales
   # GET /isales.json
   def index
     @isales = Isale.all
   end
+
+
 
   # GET /isales/1
   # GET /isales/1.json
@@ -89,4 +97,6 @@ class IsalesController < ApplicationController
     def isale_params
       params.require(:isale).permit(:pharmacy_id, :provisor_id, :drug_id, :date_sale, :quantity)
     end
+
+
 end

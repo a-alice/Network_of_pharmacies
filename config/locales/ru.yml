@@ -76,7 +76,8 @@ ru:
         provisor: Провизор
         drug: Лекарство
         date_sale: Дата продажи
-        quantity: Количество
+        quantity: Количество        
+        drug_info: Лекарств продано
       pharmacy:
         address: Адрес
         number: Номер

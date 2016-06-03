@@ -1,0 +1,17 @@
+%h1
+  =Statistic.model_name.human(count: 1)
+%table
+  %thead
+    %tr
+      %th= Isale.human_attribute_name(:pharmacy)
+      %th= Isale.human_attribute_name(:drug_info)
+      %th
+      %th
+      %th
+  %tbody
+
+  %tbody
+    - @info.each do |i|
+      %tr
+        %td= show_pharmacy(i[0])
+        %td= i[1]

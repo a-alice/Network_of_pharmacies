@@ -4,11 +4,15 @@ Rails.application.routes.draw do
   resources :statistics
   resources :statistics
   resources :iavails
-  resources :isales
   resources :provisors
   resources :pharmacies
   resources :drugs
   resources :categories
+  resources :isales do
+    collection do
+      get :stats
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
